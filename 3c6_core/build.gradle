@@ -1,0 +1,10 @@
+plugins {
+    id 'localJavaPlugin'
+}
+
+project.group = 'ca.ntro.3c6'
+project.version = 'atelier3_1'
+
+dependencies {
+
+}

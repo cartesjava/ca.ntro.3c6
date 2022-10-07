@@ -1,0 +1,88 @@
+plugins {
+    id 'localJavaPlugin'
+}
+
+project.group = 'ca.ntro.3c6'
+project.version = 'atelier3_1'
+
+dependencies {
+    c6Dependencies.split(',').each {
+        implementation project(":3c6_${it}")
+    }
+
+    ntroDependencies.split(',').each {
+        implementation "ca.ntro.cards:ntro_${it}:${version}"
+    }
+}
+
+eclipse {
+    classpath {
+        file {
+            whenMerged {
+                classpath ->
+
+                    def toRemove = []
+                    def toAdd = []
+
+                    entries.each {
+
+                        if(ntroDependencies.split(',').any{dependency -> it.path.equals("/ntro_"+dependency)}){
+                            toRemove += it
+                            toAdd += new org.gradle.plugins.ide.eclipse.model.Library(fileReference(file(it.publication.path)))
+                        }
+
+                    }
+
+                    entries.removeAll toRemove
+                    entries.addAll toAdd
+            }
+        }
+    }
+}
+
+
+task(genererTutoriel4_1, dependsOn: 'classes', type: JavaExec) {
+   main = 'tutoriels.generer_tutoriel4_1.GenerateurTutoriel4_1'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Dfile.encoding=UTF-8')
+}
+
+task(genererAtelier4_1, dependsOn: 'classes', type: JavaExec) {
+   main = 'tutoriels.generer_atelier4_1.GenerateurAtelier4_1'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Dfile.encoding=UTF-8')
+}
+
+task(genererEntrevue4_1, dependsOn: 'classes', type: JavaExec) {
+   main = 'tutoriels.generer_entrevue4_1.GenerateurEntrevue4_1'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Dfile.encoding=UTF-8')
+}
+
+task genererTout {
+    dependsOn 'genererTutoriel'
+    dependsOn 'genererAtelier'
+    dependsOn 'genererEntrevue'
+}
+
+task(testerTutoriel4_1, dependsOn: 'classes', type: JavaExec) {
+   main = 'tutoriels.generer_tutoriel4_1.SolutionTutoriel4_1'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Dfile.encoding=UTF-8')
+   standardInput = System.in
+}
+
+task(testerAtelier4_1, dependsOn: 'classes', type: JavaExec) {
+   main = 'tutoriels.generer_atelier4_1.SolutionAtelier4_1'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Dfile.encoding=UTF-8')
+   standardInput = System.in
+}
+
+task(testerEntrevue4_1, dependsOn: 'classes', type: JavaExec) {
+   main = 'tutoriels.generer_entrevue4_1.SolutionEntrevue4_1'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Dfile.encoding=UTF-8')
+   standardInput = System.in
+}
+

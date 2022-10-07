@@ -1,0 +1,48 @@
+# init
+/solutions
+
+# Java
+*.class
+
+# Python
+*.pyc
+
+# Gradle
+.gradle
+build
+bin
+*.jar
+!gradle-wrapper.jar
+
+# vim
+*.swp
+
+# emacs
+*~
+
+# Eclipse
+.settings
+.classpath
+.project
+.metadata
+
+# Idea
+.idea
+*.iml
+
+# JSweet
+.jsweet
+_jsweet
+
+# Tests
+build_*
+
+# MAC_OS
+.DS_Store
+
+# Vertx file uploads
+file-uploads
+
+# _storage
+_storage
+

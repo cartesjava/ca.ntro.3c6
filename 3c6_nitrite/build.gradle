@@ -1,0 +1,15 @@
+plugins {
+    id 'localJavaPlugin'
+}
+
+project.group = 'ca.ntro.3c6'
+project.version = 'atelier3_1'
+
+dependencies {
+
+    implementation project(':3c6_core')
+
+    // DEV: Nitrite for in-memory caching AND disk persistence
+    implementation group: 'org.dizitart', name: 'nitrite', version: '3.4.1'
+
+}

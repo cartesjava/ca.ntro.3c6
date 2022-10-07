@@ -1,0 +1,49 @@
+plugins {
+    id 'localJavaPlugin'
+}
+
+project.group = 'ca.ntro.3c6'
+project.version = 'atelier3_1'
+
+dependencies {
+
+    implementation project(':3c6_core')
+    implementation project(':3c6_java')
+    implementation project(':3c6_nitrite')
+    implementation project(':3c6_swing')
+
+    // slf4j no-op logger ; to get rid of error message
+    implementation 'org.slf4j:slf4j-nop:1.7.30'
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    ntroDependencies.split(',').each {
+        implementation "ca.ntro.cards:ntro_${it}:${version}"
+    }
+
+}
+
+eclipse {
+    classpath {
+        file {
+            whenMerged {
+                classpath ->
+
+                    def toRemove = []
+                    def toAdd = []
+
+                    entries.each {
+
+                        if(ntroDependencies.split(',').any{dependency -> it.path.equals("/ntro_"+dependency)}){
+                            toRemove += it
+                            toAdd += new org.gradle.plugins.ide.eclipse.model.Library(fileReference(file(it.publication.path)))
+                        }
+
+                    }
+
+                    entries.removeAll toRemove
+                    entries.addAll toAdd
+            }
+        }
+    }
+}
