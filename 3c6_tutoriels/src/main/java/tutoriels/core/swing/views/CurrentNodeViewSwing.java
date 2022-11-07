@@ -1,3 +1,22 @@
+/*
+Copyright (C) (2020) (Mathieu Bergeron) (mathieu.bergeron@cmontmorency.qc.ca)
+
+This file is part of Ntro, an application framework designed with teaching in mind.
+
+This is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
 package tutoriels.core.swing.views;
 
 import java.awt.CardLayout;
@@ -11,6 +30,7 @@ import ca.ntro.core.system.debug.T;
 import tutoriels.core.performance_app.swing.views.PerformanceGraphViewSwing;
 import tutoriels.core.performance_app.views.PerformanceGraphView;
 import tutoriels.core.views.CurrentNodeView;
+import tutoriels.swing.Theme;
 
 public class CurrentNodeViewSwing extends JPanel implements CurrentNodeView {
 	private static final long serialVersionUID = 8588135472839250862L;
@@ -29,7 +49,7 @@ public class CurrentNodeViewSwing extends JPanel implements CurrentNodeView {
 		setLayout(new GridLayout(0,1));
 
 		this.add(htmlPane);
-		htmlPane.setBackground(new Color(244,244,244));
+		Theme.setColors(htmlPane);
 		htmlPane.setEditable(false);
 	}
 	

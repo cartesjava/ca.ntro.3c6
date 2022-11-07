@@ -1,5 +1,26 @@
+/*
+Copyright (C) (2020) (Mathieu Bergeron) (mathieu.bergeron@cmontmorency.qc.ca)
+
+This file is part of Ntro, an application framework designed with teaching in mind.
+
+This is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
 package tutoriels.core.performance_app.swing.views;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
@@ -10,6 +31,7 @@ import ca.ntro.core.system.debug.T;
 import ca.ntro.core.views.NtroView;
 import tutoriels.core.performance_app.views.MainPerformanceAppView;
 import tutoriels.core.performance_app.views.PerformanceGraphView;
+import tutoriels.swing.Theme;
 
 @SuppressWarnings("serial")
 public class MainPerformanceAppViewSwing extends JFrame implements NtroView, MainPerformanceAppView {
@@ -32,7 +54,7 @@ public class MainPerformanceAppViewSwing extends JFrame implements NtroView, Mai
 		setSize(1200, 600);
 		
 		this.add(tabbedPane);
-		
+		Theme.setColors(tabbedPane);
 		//pack();
 		setVisible(true);
 		
@@ -56,9 +78,16 @@ public class MainPerformanceAppViewSwing extends JFrame implements NtroView, Mai
 		T.call(this);
 
 		PerformanceGraphViewSwing graphView = new PerformanceGraphViewSwing();
+		Theme.setColors(graphView);
 		
+		int newTabIndex = tabbedPane.getTabCount();
 		tabbedPane.addTab(title, graphView);
-		
+
+		Component newTab = tabbedPane.getTabComponentAt(newTabIndex);
+		if(newTab != null) {
+			Theme.setColors(newTab);
+		}
+
 		return graphView;
 	}
 }

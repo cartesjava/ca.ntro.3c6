@@ -1,5 +1,25 @@
+/*
+Copyright (C) (2020) (Mathieu Bergeron) (mathieu.bergeron@cmontmorency.qc.ca)
+
+This file is part of Ntro, an application framework designed with teaching in mind.
+
+This is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
 package ca.ntro.java;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.math.BigInteger;
 import java.util.Formatter;
@@ -42,6 +62,21 @@ public class ValueFormatterJava extends ValueFormatter {
 		if(value == null) {
 			
 			builder.append("null");
+
+		}else if(value.getClass().isArray()) {
+			
+			builder.append("[");
+			
+			int length = Array.getLength(value);
+			if(length > 0) {
+				formatValue(builder, isHtml, Array.get(value, 0));
+			}
+			for(int i = 1; i < length; i++) {
+				builder.append(", ");
+				formatValue(builder, isHtml, Array.get(value, i));
+			}
+
+			builder.append("]");
 
 		}else if(value instanceof String) {
 			

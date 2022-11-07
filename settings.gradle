@@ -7,9 +7,6 @@ include '3c6_nitrite'
 include '3c6_swing'
 include '3c6_tutoriels'
 
-//include 'generer_module1_examen'
-//include 'generer_module2_1'
-
 include 'atelier1_2_1'
 include 'solution_atelier1_2_1'
 include 'generer_atelier1_2_1'
@@ -40,58 +37,67 @@ include 'generer_atelier1_2_5'
 project(':solution_atelier1_2_5').projectDir = file('solutions/solution_atelier1_2_5')
 project(':generer_atelier1_2_5').projectDir = file('solutions/generer_atelier1_2_5')
 
-include 'generer_module2_6'
-project(':generer_module2_6').projectDir = file('solutions/generer_module2_6')
+include 'atelier3_1_1'
+include 'solution_atelier3_1_1'
+project(':solution_atelier3_1_1').projectDir = file('solutions/solution_atelier3_1_1')
 
-include 'generer_module5_1'
-project(':generer_module5_1').projectDir = file('solutions/generer_module5_1')
+include 'atelier3_1_2'
+include 'solution_atelier3_1_2'
+project(':solution_atelier3_1_2').projectDir = file('solutions/solution_atelier3_1_2')
 
-include 'generer_module5_2'
-project(':generer_module5_2').projectDir = file('solutions/generer_module5_2')
+include 'atelier3_2_1'
+include 'solution_atelier3_2_1'
+project(':solution_atelier3_2_1').projectDir = file('solutions/solution_atelier3_2_1')
+
+include 'atelier3_2_2'
+include 'solution_atelier3_2_2'
+project(':solution_atelier3_2_2').projectDir = file('solutions/solution_atelier3_2_2')
+
+include 'atelier3_2_3'
+include 'solution_atelier3_2_3'
+project(':solution_atelier3_2_3').projectDir = file('solutions/solution_atelier3_2_3')
+
+include 'atelier3_3_1'
+include 'solution_atelier3_3_1'
+project(':solution_atelier3_3_1').projectDir = file('solutions/solution_atelier3_3_1')
+
+include 'atelier3_3_2'
+include 'solution_atelier3_3_2'
+project(':solution_atelier3_3_2').projectDir = file('solutions/solution_atelier3_3_2')
+
+include 'atelier3_3_3'
+include 'solution_atelier3_3_3'
+project(':solution_atelier3_3_3').projectDir = file('solutions/solution_atelier3_3_3')
+
 
 include 'atelier4_1'
 include 'solution_atelier4_1'
 project(':solution_atelier4_1').projectDir = file('solutions/solution_atelier4_1')
 
-include 'atelier3_1_1'
-include 'solution_atelier3_1_1'
-project(':solution_atelier3_1_1').projectDir = file('solutions/solution_atelier3_1_1')
-include 'generer_module3_1'
-project(':generer_module3_1').projectDir = file('solutions/generer_module3_1')
+include 'atelier4_2'
+include 'solution_atelier4_2'
+project(':solution_atelier4_2').projectDir = file('solutions/solution_atelier4_2')
 
-include 'atelier3_1_2'
-include 'solution_atelier3_1_2'
-project(':solution_atelier3_1_2').projectDir = file('solutions/solution_atelier3_1_2')
-include 'generer_module3_2'
-project(':generer_module3_2').projectDir = file('solutions/generer_module3_2')
+include 'atelier4_3'
+include 'solution_atelier4_3'
+project(':solution_atelier4_3').projectDir = file('solutions/solution_atelier4_3')
 
-/*
-include 'generer_module2_2'
 
-include 'generer_module2_examen'
+include 'atelier5_1'
+include 'solution_atelier5_1'
+project(':solution_atelier5_1').projectDir = file('solutions/solution_atelier5_1')
 
-include 'generer_module3_1'
-include 'generer_module3_2'
-include 'generer_module3_3'
-include 'generer_module3_4'
+include 'atelier5_2'
+include 'solution_atelier5_2'
+project(':solution_atelier5_2').projectDir = file('solutions/solution_atelier5_2')
 
-include 'generer_module3_examen'
+include 'atelier5_3_1'
+include 'solution_atelier5_3_1'
+project(':solution_atelier5_3_1').projectDir = file('solutions/solution_atelier5_3_1')
 
-include 'generer_module4_1'
-include 'generer_module4_2'
-include 'generer_module4_3'
-include 'generer_module4_4'
-
-include 'generer_module4_examen'
-
-include 'generer_module5_1'
-include 'generer_module5_2'
-include 'generer_module5_3'
-include 'generer_module5_4'
-
-include 'generer_module5_examen'
-*/
-
+include 'atelier5_3_2'
+include 'solution_atelier5_3_2'
+project(':solution_atelier5_3_2').projectDir = file('solutions/solution_atelier5_3_2')
 
 buildscript {
     repositories {

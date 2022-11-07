@@ -1,3 +1,22 @@
+/*
+Copyright (C) (2020) (Mathieu Bergeron) (mathieu.bergeron@cmontmorency.qc.ca)
+
+This file is part of Ntro, an application framework designed with teaching in mind.
+
+This is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
 package atelier4_1;
 
 import java.util.ArrayList;
@@ -22,35 +41,35 @@ public class TesteurAtelier4_1 extends PerformanceTestsDriver {
 
 		if(methodName.equals("fairePlusieursAjouts")) {
 			
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 3.0, true);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.0, true);
 
 		} else if(methodName.equals("fairePlusieursInsertionsAuDebut")) {
 
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 3.0, true);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.0, true);
 
 		} else if(methodName.equals("fairePlusieursInsertionsAleatoires")) {
 			
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 3.00, true);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.00, true);
 
 		} else if(methodName.equals("fairePlusieursModificationsAleatoires")) {
 			
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 3.00, false);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.00, false);
 
 		} else if(methodName.equals("fairePlusieursRetraitsAleatoires")) {
 			
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 3.0, true);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.0, true);
 
 		} else if(methodName.equals("fairePlusieursRetraitsAuDebut")) {
 			
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 3.0, true);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.0, true);
 
 		} else if(methodName.equals("fairePlusieursRetraitsALaFin")) {
 			
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 3.0, true);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.0, true);
 
 		} else if(methodName.equals("melangerLaListe") || methodName.equals("melangerLaListeEfficace")) {
 			
-			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 20.0, true);
+			testsParameters = new TestParameters((int) 1E4, (int) 1E4*3, 30, 10.0, true);
 			//testsParameters = new TestParameters((int) 1E4, (int) 1E5, 30, 15.0, true);
 		}
 
