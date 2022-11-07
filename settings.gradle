@@ -107,7 +107,7 @@ buildscript {
 
 sourceControl {
 
-    gitRepository("https://gitlab.com/mathieu-bergeron/ca.ntro.cards") {
+    gitRepository("https://github.com/cartesjava/ca.ntro.cards") {
         ntroDependencies.split(',').each {
             producesModule("ca.ntro.cards:ntro_${it}")
         }
