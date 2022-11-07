@@ -3,7 +3,7 @@ plugins {
 }
 
 project.group = 'ca.ntro.3c6'
-project.version = 'atelier4'
+project.version = 'cartesjava'
 
 dependencies {
 
